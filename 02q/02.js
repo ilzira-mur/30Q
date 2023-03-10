@@ -1,3 +1,23 @@
+//
+const LIST = document.querySelector(".list");
+const CLASSNAMETRUE = "true";
+const CLASSNAMERED = "red";
+const CLASSNAMEGREEN = "green";
+
+LIST.onclick = (event) => {
+    event.stopPropagation();
+    const LI = event.target;
+    if (LI.nodeName !== "LI") return
+    if (event.target.classList.contains(CLASSNAMETRUE))
+        {
+        LI.classList.add(CLASSNAMEGREEN)
+        }
+    else {
+        LI.classList.add(CLASSNAMERED)
+    }
+}
+
+//
 const obj1 = {
     userName: "Peter Ivanov",
     getUser: function() {
@@ -18,6 +38,7 @@ const f3 = f1.bind(obj2);
 console.log(f1())
 console.log(f2())
 console.log(f3())
+
 
 //
 const OUTDIV = document.querySelector(".out")
@@ -46,3 +67,15 @@ OUTDIV.append(renderButton());
 OUTDIV.append(renderTextObj());
 OUTDIV.append(renderText());
 
+//
+const SPANTESTONE = document.querySelector(".test-1");
+const SPANTESTTWO = document.querySelector(".test-2");
+
+function getWith() {
+    console.log(this.offsetWidth);
+}
+
+const getWith2 = getWith.bind(SPANTESTTWO);
+SPANTESTONE.onclick = getWith2;
+const getWith1 = getWith.bind(SPANTESTONE);
+SPANTESTTWO.onclick = getWith1;
