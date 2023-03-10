@@ -1,0 +1,17 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: blanchedalmond;
+    width: 100%;
+    max-width: 1024px;
+    margin: 0 auto;
+    padding: 32px;
+}
+
+h1 {
+    font-size: 18px;
+}
+
+.list li {
+    font-size: 16px;
+    cursor: pointer;
+}
